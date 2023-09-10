@@ -1,5 +1,7 @@
 package bai7;
 
+import com.sun.source.doctree.SystemPropertyTree;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -7,39 +9,33 @@ import java.util.Scanner;
 // Nếu nhập một số đã có thì yêu cầu nhập lại. Sau khi đủ n phần tử thì in dãy số đã nhập ra màn hình.
 public class bai7 {
     public static void main(String[] args) {
-        int[] array = inputArray();
-
-        daySo(array);
-
-
-    }
-
-    public static int[] inputArray() {
         System.out.println("Nhap so luong mang:  ");
         int n = new Scanner(System.in).nextInt();
-        int[] a = new int[n];
-        for (int i = 0; i < n; i++) {
-            System.out.println("a["+i+"] = ");
-            a[i] = new Scanner(System.in).nextInt();
-        }
-        return a;
+
+        int[] a = inputArray(n);
+
+        System.out.println(Arrays.toString(a));
     }
 
-    public static void daySo(int[] array) {
+    public static int[] inputArray(int n) {
+        int[] array = new int[n];
         int number = 0;
+
         while(number < array.length){
+            System.out.print("a["+number+"] = ");
             int element = new Scanner(System.in).nextInt();
             if(kiemTra(array, number, element)){
+                System.out.print("So da ton tai nhap lai ");
+            }else{
                 array[number] = element;
                 number++;
-            } else {
-                System.out.println("Số đã tồn tại trong dãy. Hãy nhập lại.");
             }
         }
+            return array;
     }
-    public static boolean kiemTra(int[] array, int number, int element  ) {
+    public static boolean kiemTra(int[] a, int number, int element) {
         for (int i = 0; i < number; i++) {
-            if (array[i] == element) {
+            if(a[i] == element){
                 return true;
             }
         }

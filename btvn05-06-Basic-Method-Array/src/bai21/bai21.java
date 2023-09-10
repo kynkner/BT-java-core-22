@@ -2,7 +2,7 @@ package bai21;
 
 import java.util.Scanner;
 
-/**Thực hiện nhập vào h ai mảng số nguyên a,b đều có n phần tử (n>0).
+/**Thực hiện nhập vào hai mảng số nguyên a,b đều có n phần tử (n>0).
  *Thực hiện tính tổng hai mảng này theo quy tắc:
  * phần tử đầu của a sẽ được cộng với phần tử cuối của b để cho ra phần tử đầu của mảng kết quả,
  * tiếp theo phần tử thứ 2 của a và phần tử gần cuối của b được cộng vào để cho ra phần tử thứ 2 của mảng kết quả,
