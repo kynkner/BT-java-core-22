@@ -15,8 +15,6 @@ public class bai15 {
             return;
         }
             System.out.println("khong phai la nguyen to cung nhau");
-
-
     }
 
     public static int ucln(int m, int n) {
