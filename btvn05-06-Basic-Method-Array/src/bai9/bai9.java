@@ -15,8 +15,8 @@ public class bai9 {
         int number1 = number;
         int number2 =0;
         while(number > 0){
-                    number2 = (number2 * 10) + (number % 10);
-                    number /= 10;
+            number2 = (number2 * 10) + (number % 10);
+            number /= 10;
         }
         return number1 == number2;
     }
