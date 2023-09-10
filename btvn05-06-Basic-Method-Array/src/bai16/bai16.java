@@ -34,7 +34,6 @@ public class bai16 {
         }
         return  number1 == number2;
     }
-
     public static boolean khong4(int number) {
         while(number > 0){
             int digit = number % 10;

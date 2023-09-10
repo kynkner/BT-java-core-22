@@ -17,12 +17,16 @@ public class bai3 {
             System.out.print("a["+i+"] = ");
             a[i] = new Scanner(System.in).nextInt();
         }
+        System.out.println("Co "+bangNhau(a, n)+" cap hai phan tu lien tiep bang nhau trong day");
+    }
+
+    public static int bangNhau(int[] a, int n) {
         int cout = 0;
         for(int i = 0; i < n - 1; i++){
             if(a[i] == a[i + 1]){
                 cout++;
             }
         }
-        System.out.println(cout);
+        return cout;
     }
 }

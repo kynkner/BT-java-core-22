@@ -18,6 +18,7 @@ public class bai4 {
         if(result[0] != -1){
             System.out.println("So lon thu 2 la: "+result[0]);
             System.out.println("Vi tri so lon thu 2 la: "+result[1]);
+            return;
         }
         System.out.println("khong co so lon thu hai");
     }
@@ -32,7 +33,8 @@ public class bai4 {
                 max2 = max1;
                 max1 = a[i];
                 max2Index = i - 1;
-            } else if (a[i] > max2 && a[i] != max1) {
+            }
+            if (a[i] > max2 && a[i] != max1) {
                 max2 = a[i];
                 max2Index = i;
             }

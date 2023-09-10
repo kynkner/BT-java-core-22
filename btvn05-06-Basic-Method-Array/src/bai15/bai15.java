@@ -12,9 +12,10 @@ public class bai15 {
 
         if(ucln(m, n) == 1){
             System.out.println("Nguyen to cung nhau");
-        }else{
-            System.out.println("khong phai la nguyen to cung nhau");
+            return;
         }
+            System.out.println("khong phai la nguyen to cung nhau");
+
 
     }
 

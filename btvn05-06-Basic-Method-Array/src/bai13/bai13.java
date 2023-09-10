@@ -2,7 +2,7 @@ package bai13;
 
 import java.util.Scanner;
 
-//Nhập số tự nhiên n rồi tính tổng
+//Nhập số tự nhiên n rồi tính tổng: sum = 1 + 1/2 + 1/3 + ... + 1/n
 public class bai13 {
     public static void main(String[] args) {
         System.out.print("Nhap so tu nhien n:  ");
