@@ -1,5 +1,6 @@
 package bai21;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**Thực hiện nhập vào hai mảng số nguyên a,b đều có n phần tử (n>0).
@@ -12,19 +13,27 @@ public class bai21 {
         System.out.print("Nhap so luong mang: ");
         int n = new Scanner(System.in).nextInt();
 
-        int[] a = new int[n];
-        int[] b = new int[n];
+        int[] a = intputArray(n);
+        System.out.println();
+        int[] b = intputArray(n);
 
-        System.out.println("Nhap phan tu mang a:  ");
-        intputMatrix(a);
-        System.out.println("phan tu b");
-        intputMatrix(b);
+        System.out.println(Arrays.toString(sumArray(a, b)));
     }
 
-    public static void intputMatrix(int[] a) {
+    public static int[] intputArray(int n) {
+        int[] a = new int[n];
         for(int i = 0; i < a.length; i++){
-            System.out.println("["+i+"] :");
+            System.out.print("["+i+"] = ");
             a[i] = new Scanner(System.in).nextInt();
         }
+        return a;
+    }
+
+    public static int[] sumArray(int[] a, int[] b) {
+        int[] sum = new int[a.length];
+        for (int i = 0; i < a.length; i++) {
+            sum[i] = a[i] + b[a.length - 1 - i];
+        }
+        return sum;
     }
 }
