@@ -5,7 +5,7 @@ package bai8;
 import java.util.Scanner;
 
 public class bai8 {
-    /**
+
     public static void main(String[] args) {
         System.out.println("Nhap so luong mảng: ");
         int m = new Scanner(System.in).nextInt();
@@ -14,17 +14,15 @@ public class bai8 {
         System.out.println("Nhap so luong mảng: ");
         int k = new Scanner(System.in).nextInt();
 
-        int[][] A = new int[m][n];
-        int[][] B = new int[n][k];
-
-        inputArray(A);
-        inputArray(B);
+        int[][] A = inputArray(m, n);
+        int[][] B = inputArray(n, k);
 
         int[][] kQ = tinhTichMaTran(A, B);
         inMaTran(kQ);
     }
 
-    public static void inputArray(int[][] a) {
+    public static int[][] inputArray(int m, int n ) {
+        int[][] a = new int[m][n];
         for(int i = 0; i < a.length; i++) {
             for (int j = 0; j < a[i].length; j++) {
                 System.out.print("[" + i + "][" + j + "] = ");
@@ -32,16 +30,14 @@ public class bai8 {
             }
             System.out.println();
         }
+        return  a;
     }
     public static int[][] tinhTichMaTran(int[][] A, int[][] B) {
-        int m = A.length;
-        int n = A[0].length;
-        int k = B[0].length;
-        int[][] result = new int[m][k];
+        int[][] result = new int[A.length][B[0].length];
 
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < k; j++) {
-                for (int x = 0; x < n; x++) {
+        for (int i = 0; i < A.length; i++) {
+            for (int j = 0; j < A[0].length; j++) {
+                for (int x = 0; x < B[0].length; x++) {
                     result[i][j] += A[i][x] * B[x][j];
                 }
             }
@@ -57,5 +53,4 @@ public class bai8 {
         }
     }
 
-*/
 }
