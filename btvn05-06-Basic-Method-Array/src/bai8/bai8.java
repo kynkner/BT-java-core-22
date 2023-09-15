@@ -23,6 +23,7 @@ public class bai8 {
 
     public static int[][] inputArray(int m, int n ) {
         int[][] a = new int[m][n];
+
         for(int i = 0; i < a.length; i++) {
             for (int j = 0; j < a[i].length; j++) {
                 System.out.print("[" + i + "][" + j + "] = ");
@@ -38,7 +39,7 @@ public class bai8 {
         for (int i = 0; i < A.length; i++) {
             for (int j = 0; j < A[0].length; j++) {
                 for (int x = 0; x < B[0].length; x++) {
-                    result[i][j] += A[i][x] * B[x][j];
+                    result[i][x] += A[i][j] * B[j][x];
                 }
             }
         }
