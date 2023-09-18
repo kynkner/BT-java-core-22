@@ -61,4 +61,8 @@ public class Reader extends person {
         System.out.print(", Dia chi: "+Aadress);
         System.out.print(", So dien thoai: "+Phone);
     }
+    public void showNameStudents(){
+        System.out.print("  "+Name);
+
+    }
 }

@@ -1,5 +1,6 @@
 import entity.Book;
 import entity.Reader;
+import statics.Specialized;
 
 import java.util.Scanner;
 
@@ -24,13 +25,14 @@ public class Main {
                    printStudent(readers);
                    break;
                case 5:
-                   //----
+                   printMenuBorrow();
                    break;
                case 6:
                    //----
                    break;
                case 7:
-                   arrange();
+                   arrangeName(readers);
+                   arrageNumberBooks();
                    //sap xep giam dan: theo ten, theo so luong sach muon dc
                    break;
                case 8:
@@ -125,8 +127,115 @@ public class Main {
             }
         }
     }
-    public static void arrange(){
+    public static void arrangeName(Reader[] readers){
+        for (int i = 0; i < readers.length - 1; i++) {
+            for (int j = i + 1; j < readers.length; j++) {
+                String reader1 = readers[i].getName();
+                String reader2 = readers[j].getName();
+                int minLenght = Math.min(reader1.length(), reader2.length());
+                int number = 0;
+                while(number < minLenght){
+                    char charreader1 = reader1.charAt(number);
+                    char charreader2 = reader2.charAt(number);
+                    if(charreader1 != charreader2){
+                        if(charreader1 > charreader2){
+                            Reader temp = readers[i];
+                            readers[i] = readers[j];
+                            readers[j] = temp;
+                        }
+                        break;
+                    }
+                    number++;
+                }
+                if(reader1.length() > reader2.length()){
+                    Reader temp = readers[i];
+                    readers[i] = readers[j];
+                    readers[j] = temp;
+                }
+            }
+        }
+    }
+    public static void printMenuBorrow(){
+        Book book = new Book();
+        System.out.println( "Chon ban doc: ");
+        printNameStudent(readers);
+        int number = new Scanner(System.in).nextInt();
+        int numberSpecializes = 0;
+        for (int i = 0; i < readers.length; i++) {
+            if(number == i + 1 ){
+               while(numberSpecializes <= 5){
+                   System.out.println("Chon 1 trong cac chuyen nganh sau; ");
+                   System.out.println("1. Khoa hoc tu nhien");
+                   System.out.println("2. Van hoc- Nghe thuat");
+                   System.out.println("3. Dien tu vien thong");
+                   System.out.println("4. Cong nghe thong tin");
+                   System.out.println("5. Luu/Thoat.");
+                   int type = new Scanner(System.in).nextInt();
+                   switch (type){
+                       case 1:
+                           book.setSpecialized(Specialized.NaturalSciences);
+                           System.out.println("Chon sach ban muon muon: ");
+                           prinNameBook(books, type);
+                           int numberBook = new Scanner(System.in).nextInt();
+                           for (int j = 0; j < books.length; j++) {
+                               if(numberBook == j + 1){
+                                   System.out.println("So luong muon muon: ");
+                                    int temp = new Scanner(System.in).nextInt();
+                                    if(temp <= 3){
+                                        numberSpecializes = temp;
+                                    }
+                                   System.out.println("Qua so luong quy dinh");
+                               }
+                           }
+                           break;
+                       case 2:
+                           book.setSpecialized(Specialized.LiteratureArts);
 
+                           break;
+                       case 3:
+                           book.setSpecialized(Specialized.ElectronicsandTelecommunication);
+
+                           break;
+                       case 4:
+                           book.setSpecialized(Specialized.Informationtechnology);
+
+                           break;
+                       case 5:
+                           return;
+                   }
+                   numberSpecializes++;
+               }
+            }
+        }
+
+
+    }
+    public static void printNameStudent(Reader[] readers){
+        for (int i = 0; i < readers.length; i++) {
+            if(readers[i] != null){
+                System.out.print("Ban doc thu "+(i + 1)+" :");
+                readers[i].showNameStudents();
+                System.out.println();
+            }
+        }
+    }
+    public static void prinNameBook(Book[] books, int n ){
+        Book book = new Book();
+        String name = "Khoa hoc tu nhien";
+        for (int i = 0; i < books.length; i++) {
+            if(books[i] != null){
+                if(n == 1){
+
+
+                }
+            }
+        }
+    }
+
+
+
+    public static void arrageNumberBooks(){
+        
     }
     public static void searchanddisplay(){
           

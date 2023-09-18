@@ -104,4 +104,8 @@ public class Book {
         System.out.print(", Chuyen nganh: "+specialized.value);
         System.out.print(", Nam xuat ban: "+publishingYear);
     }
+    public void showNameBooks(){
+        System.out.print("  "+bookTitle);
+
+    }
 }
