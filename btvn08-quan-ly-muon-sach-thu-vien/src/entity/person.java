@@ -2,7 +2,7 @@ package entity;
 
 import java.util.Scanner;
 
-public class person {
+public class person implements   inputable{
 
     protected String Name;
     protected String Aadress;
@@ -32,6 +32,7 @@ public class person {
         return Phone;
     }
 
+        @Override
     public void inputInfo(){
         System.out.print("Nhap ten ban doc: ");
         this.setName(new Scanner(System.in).nextLine());

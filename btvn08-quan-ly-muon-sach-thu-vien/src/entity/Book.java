@@ -5,7 +5,7 @@ import statics.Specialized;
 import javax.security.sasl.SaslClient;
 import java.util.Scanner;
 
-public class Book {
+public class Book implements inputable{
     public static int auto_id = 10000;
     private int Id; // ma sach
     private String bookTitle;   //ten sach
@@ -66,6 +66,7 @@ public class Book {
     public int getPublishingYear() {
         return publishingYear;
     }
+    @Override
     public void inputInfo(){
         System.out.print("Nhap ten sach: ");
         this.setBookTitle(new Scanner(System.in).nextLine());
