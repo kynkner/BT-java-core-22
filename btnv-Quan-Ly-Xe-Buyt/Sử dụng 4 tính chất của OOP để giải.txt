@@ -1,0 +1,31 @@
+Sử dụng 4 tính chất của OOP để giải quyết bài toán, kết hợp với mảng một chiều.
+Để đáp ứng đủ 4 tính chất OOP, học viên có thể tự tạo các class phụ trợ khác ngoài các class yêu cầu trong bài toán.
+
+Khai báo lớp Người (Họ tên, Địa chỉ, SĐT), lớp Lái xe kế thừa lớp Người (mã LX, Trình độ) – với quy định
+trình độ lái xe được chọn trong các mức từ Loại A đến Loại F, mã LX là một số nguyên có 5 chữ số, tự động tăng.
+
+Khai báo lớp Tuyến (mã tuyến, khoảng cách, số điểm dừng), mã tuyến là một số nguyên có 3 chữ số, tự động
+tăng.
+
+Khai báo lớp Bảng phân công có quan hệ kết hợp với lớp Lái xe và lớp Tuyến. Trong đó một lái xe trong một ngày được phân công lái xe trên một hoặc nhiều tuyến, với mỗi tuyến cần cho biết lái xe đó sẽ lái bao nhiêu lượt.
+Giả sử tổng số lượt trong ngày của lái xe không vượt quá 15.
+
+Viết chương trình trong ngôn ngữ JAVA thực hiện các yêu cầu sau:
+
+1.Nhập danh sách Lái xe mới. In ra danh sách lái xe sau khi nhập.---------------Compalete
+2.Nhập danh sách Tuyến mới. In ra danh sách các tuyến sau khi nhập.
+3.Nhập danh sách phân công cho mỗi lái xe và in danh sách ra màn hình.
+4.Sắp xếp danh sách phân công
+a. Theo Họ tên lái xe
+b. Theo Số lượng tuyến đảm nhận trong ngày (giảm dần)
+5.Lập bảng kê tổng khoảng cách chạy xe trong ngày của mỗi lái xe
+
+Yêu cầu:
+- tạo class Person co: Name, Adress, numberphone
+tạo class Driver kế thừa Person: Person, mã Lx tăng 5 chữ số tự động, Trình độ(Từ loại A đến F)
+-Tạo class khai báo tuyến : Mã tuyến 3 sô tự động tăng, Khoảng cách, Số điểm dừng
+-Tạo class Bảng phân công quan hệ kết hợp giữa Lái xe và tuyến
+
+3.bảng phân công có quan hệ kết hợp với lái xe và lớp tuyến
+lai xe 1= tuyến {1, 2, 3}
+          mỗi lượt {2, 3, 4}
