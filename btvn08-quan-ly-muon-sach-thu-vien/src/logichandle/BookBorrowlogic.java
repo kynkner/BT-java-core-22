@@ -94,7 +94,7 @@ public class BookBorrowlogic {
             readerId =  new Scanner(System.in).nextInt();
             reader = readerlogic.searchReaderById(readerId);
             if (reader == null){
-                System.out.println("Khong ton tai ban doc ang ma"+readerId+", vui long nhap lai: ");
+                System.out.println("Khong ton tai ban doc mang ma"+readerId+", vui long nhap lai: ");
             }
         }while(reader != null);
         return reader;
