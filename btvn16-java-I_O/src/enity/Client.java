@@ -6,12 +6,9 @@ import statics.CustomerType;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Client {
+public class Client extends Person{
     private static int auto_id = 10000;
     private int Id;
-    private String Name;
-    private String Address;
-    private String Phone;
     private CustomerType customerType;
 
     public Client() {
@@ -77,14 +74,9 @@ public class Client {
     public void setCustomerType(CustomerType customerType) {
         this.customerType = customerType;
     }
-
+    @Override
     public void inputInfo() {
-        System.out.print("Nhập tên khách hàng: ");
-        this.Name = new Scanner(System.in).nextLine();
-        System.out.print("Nhập địa chỉ: ");
-        this.Address = new Scanner(System.in).nextLine();
-        System.out.print("Nhập số điện thoại: ");
-        this.Phone = inptPhone();
+        super.inputInfo();
         System.out.println("Chọn loại khách hàng: ");
         System.out.println("1. Cá nhân");
         System.out.println("2. Tập thể");
@@ -128,16 +120,4 @@ public class Client {
         throw new InvaliAgeExcetion("Không có chức năng, Vui lòng chọn lại: ");
     }
 
-    private String inptPhone() {
-        String number;
-        do {
-            number = new Scanner(System.in).nextLine();
-            String regex = "(84|0[3|5|7|8|9])+([0-9]{8})";
-            if (number.matches(regex)) {
-                break;
-            }
-            System.out.print("So dien thoai khong hop le, Vui long nhap lai: ");
-        }while (true);
-        return number;
-    }
 }

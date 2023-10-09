@@ -5,7 +5,7 @@ import exception.InvaliAgeExcetion;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Bank {
+public class Bank implements InputInfo{
     private int auto_id = 100;
     private int Id;
     private String Name;
@@ -56,7 +56,7 @@ public class Bank {
     public void setDepositInterestRates(float depositInterestRates) {
         DepositInterestRates = depositInterestRates;
     }
-
+    @Override
     public void inputInfo() {
         System.out.print("Nhập tên ngân hàng: ");
         this.Name = new Scanner(System.in).nextLine();
